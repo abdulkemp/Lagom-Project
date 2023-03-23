@@ -1,8 +1,8 @@
 <template>
   <div>
     <NavBar />
-
-    <div class="whole">
+    
+    <div class="whol">
       <div class="land">
         <p>
           <img
@@ -85,13 +85,13 @@
 <script>
 import NavBar from "../components/NavBar.vue";
 import products from "../components/Products.vue";
-import Spinner from "../components/Spinner.vue";
+// import Spinner from "../components/Spinner.vue";
 export default {
   name: "HomeView",
   components: {
     NavBar,
     products,
-    Spinner,
+    // Spinner,
   },
 };
 </script>

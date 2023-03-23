@@ -74,23 +74,17 @@ export default createStore({
           console.log(err);
         });
     },
-    async deleteProduct(context, payload) {
-      console.log(payload);
-      fetch(`https://lagom-project.onrender.com/product`, {
-        method: "DELETE",
-        mode: "cors",
-        headers: {
-          "Content-type": "application/json; charset=UTF-8",
-        },
-        body: JSON.stringify(payload),
-      })
-        .then((res) => res.json())
-        .then((data) => {
-          console.log(data);
-        })
-        .catch((err) => {
-          console.log(err);
-        });
+    async deleteProduct(context, id, dispatch) {
+      const res = await axios.get(`${lagomURL}product/${id}`);
+      console.log(res);
+      const { msg, err } = await res.data;
+      if (msg) {
+        context.commit("setProduct", msg[0]);
+        console.log(msg);
+        dispatch('fetchProducts')
+      } else {
+        context.commit('setMessage',err);
+      }
     },
     async register(context, payload) {
       console.log(payload);

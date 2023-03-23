@@ -15,25 +15,16 @@
             </div>
             <div class="card-body">
               <h5 class="card-title">{{ item.prodName }}</h5>
-              <!-- <p class="card-text">R {{ item.price }}</p> -->
               <button class="bt">Add to cart</button>
-              <!-- <button
-                type="button"
-                class="bt1"
-                data-bs-toggle="modal"
-                data-bs-target="#exampleModalFullscreen"
-              > -->
               <router-link class="bt1" :to="{name: 'single', params: {id: item.id}}" >
                Show More...
               </router-link>
-            <!-- </button> -->
             </div>
           </div>
         </div>
         <Footer />
       </div>
     </div>
-    <SingleProduct />
   </div>
 
   <div v-else>
@@ -44,12 +35,12 @@
 <script>
 import axios from "axios";
 import Footer from "../components/Footer.vue";
-import SingleProduct from "../components/SingleProduct.vue";
+// import SingleProduct from "../components/SingleProduct.vue";
 export default {
   name: "products",
   components: {
     Footer,
-    SingleProduct,
+    // SingleProduct,
   },
   data() {
     return {
@@ -75,6 +66,10 @@ export default {
 .card {
   width: 20rem;
   /* height: 10rem; */
+}
+
+.card-title{
+  text-align: center;
 }
 .line {
   border: 1px solid black;
@@ -108,6 +103,7 @@ export default {
   background-color: rgba(31, 241, 49, 0.733);
   border: 1px solid rgb(31, 241, 49);
   border-radius: 5px;
+  text-align: center;
 }
 .show  {
   color: black;
