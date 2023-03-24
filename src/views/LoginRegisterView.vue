@@ -4,7 +4,7 @@
       <div class="login">
         <div class="front">
           <img
-            src="https://i.postimg.cc/fT2ShMJR/23edd32f3158992ec50d955d6b39157a.jpg"
+            src="https://i.postimg.cc/L63rxvBX/designer-wooden-door-500x500.jpg"
             alt=""
           />
         </div>
@@ -40,7 +40,7 @@
       <div class="register">
         <div class="front1">
           <img
-            src="https://i.postimg.cc/fT2ShMJR/23edd32f3158992ec50d955d6b39157a.jpg"
+            src="https://i.postimg.cc/wTpC5nNZ/designer-right-wooden-door-500x500.jpg"
             alt=""
           />
         </div>
@@ -153,10 +153,11 @@ export default {
 }
 
 .login .front img {
-  width: 600px;
+  width: 60px;
   height: auto;
   max-width: 100%;
 }
+
 .register .front1 img {
   width: 600px;
   height: auto;
@@ -241,9 +242,9 @@ export default {
 
 .login {
   position: relative;
-  /* width: 20rem;
-  height: 25rem; */
-  background-color: aqua;
+  width: 20rem;
+  height: 25rem;
+  /* background-color: aqua; */
   transform-style: preserve-3d;
   transform: perspective(1000px);
   transition: 1s;
@@ -255,7 +256,7 @@ export default {
   position: relative;
   /* width: 20rem;
   height: 25rem; */
-  background-color: aqua;
+  /* background-color: aqua; */
   transform-style: preserve-3d;
   transform: perspective(1000px);
   transition: 1s;
@@ -437,6 +438,10 @@ button {
     justify-content: center;
     align-items: center;
     margin-bottom: 2rem;
+  }
+
+  .login .front img{
+    background-image: url('https://i.postimg.cc/wTpC5nNZ/designer-right-wooden-door-500x500.jpg');
   }
   .everything {
     display: inline-block;

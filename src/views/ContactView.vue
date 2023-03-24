@@ -90,7 +90,7 @@
                 </textarea>
               </div>
               <div class="col-12">
-                <button class="btn btn-primary" type="submit">
+                <button class="btn btn-primary" style="width: 30rem;" type="submit">
                   Submit form
                 </button>
               </div>
@@ -161,10 +161,11 @@ export default {
   margin-bottom: 5rem;
 }
 */
-/* .col-12 {
-  margin-top: 3rem;
-  margin-bottom: -5rem;
-}  */
+.col-12 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+} 
 /* .di{
       min-height: 100vh;
   } */

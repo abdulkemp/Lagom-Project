@@ -2,54 +2,58 @@
   <body class="sing">
     <div v-if="product">
       <NavBar />
-      
+
       <div class="heading">
         <h1 class="animate__animated animate__zoomInUp line">
           {{ product.prodName }}
         </h1>
       </div>
-      <div class="whole">
-        <div class="cont-fluid">
-          <div class="row img1">
-            <div class="colu1">
-              <div class="view-image">
-                <img :src="product.image" alt="" />
+      <div class="jack">
+        <div class="whole hole">
+          <div class="cont-fluid animate__animated animate__zoomInLeft">
+            <div class="row img1">
+              <div class="colu1">
+                <div class="view-image">
+                  <div class="smaller">
+                    <img class="small" :src="product.image" alt="" />
+                  </div>
+                </div>
               </div>
             </div>
-        </div>
-      </div>
-      <div class="cont-fluid1">
-        <div class="row desc1">
-          <div class="col card">
-            <div class="card-body">
-              <div class="name">
-                <h5>{{ product.prodName }}</h5>
-              </div>
-              <div class="description">
-                <p>{{ product.prodDesc }}</p>
-              </div>
-              <div class="price">
-                <p>
-                  Cost Price <span class="rig">R {{ product.price }} </span>
-                </p>
-                <p>
-                  Shipping Price
-                  <span class="rig">R {{ product.shipPrice }} </span>
-                </p>
-              </div>
-              <div class="addp">
-                <a href="#" class="btn btn-success ad">Add to checkout </a>
+          </div>
+          <div class="cont-fluid1 animate__animated animate__zoomInRight">
+            <div class="row desc1">
+              <div class="col card">
+                <div class="card-body">
+                  <div class="name">
+                    <h5>{{ product.prodName }}</h5>
+                  </div>
+                  <div class="description">
+                    <p>{{ product.prodDesc }}</p>
+                  </div>
+                  <div class="price">
+                    <p>
+                      Cost Price <span class="rig">R {{ product.price }} </span>
+                    </p>
+                    <p>
+                      Shipping Price
+                      <span class="rig">R {{ product.shipPrice }} </span>
+                    </p>
+                  </div>
+                  <div class="addp">
+                    <a href="#" class="btn btn-success ad">Add to cart </a>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-  <div v-else>
-    <Spinner />
-  </div>
-</body>
+    <div v-else>
+      <Spinner />
+    </div>
+  </body>
 </template>
 
 <script>
@@ -67,6 +71,17 @@ export default {
       return this.$store.state.product;
     },
   },
+  methods: {
+    addToCart() {
+      if (!this.token) {
+        swal({
+          text: "please login to add item in cart",
+          icon: "error",
+        });
+        return;
+      }
+    },
+  },
   mounted() {
     this.$store.dispatch("fetchProduct", this.id);
   },
@@ -79,36 +94,30 @@ export default {
   padding: 0;
   box-sizing: border-box;
 }
-
 .addp {
   margin-top: 3rem;
   border-top: 2px solid black;
 }
-
 .ad {
   float: right;
   margin-top: 1rem;
 }
-
 .heading {
   display: flex;
   justify-content: center;
   align-items: center;
   padding-top: 3rem;
 }
-
-.line{
+.line {
   border: 3px solid black;
   /* border: none; */
 }
-
 .cont-fluid {
   width: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
   max-height: 100%;
-  
 }
 .cont-fluid1 {
   width: 50%;
@@ -116,29 +125,28 @@ export default {
   justify-content: center;
   align-items: center;
   float: right;
+  /* margin-bottom: 3rem; */
 }
-
 .whole {
   display: flex;
   justify-content: center;
   /* align-items: center; */
 }
-
 .view-image img {
-  height: 35rem;
-  max-width: 40rem;
+  height: 30rem;
+  /* margin-left: 8rem; */
+  /* max-width: 40rem; */
+  max-height: 30rem;
   border-radius: 29% 71% 23% 77% / 77% 19% 81% 23%;
   border: 2px solid black;
 }
 .rig {
   float: right;
 }
-
 .desc1 {
   /* height: 30rem; */
   max-height: 100%;
 }
-
 .name {
   display: flex;
   justify-content: center;
@@ -147,7 +155,6 @@ export default {
   margin-bottom: 2rem;
   border-bottom: 2px solid black;
 }
-
 .name h5 {
   font-size: 25px;
 }
@@ -157,4 +164,131 @@ export default {
   align-items: center;
   border: 3px solid black;
 } */
+
+@media screen and (max-width: 768px) {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  .jack {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+  }
+  .hole {
+    display: inline-block;
+    justify-content: center;
+    align-content: center;
+  }
+  .view-image img {
+    width: 14rem;
+    height: 18rem;
+    border-radius: 5px;
+    border: 2px solid black;
+  }
+  .cont-fluid {
+    width: 150px;
+    height: 300px;
+    max-height: 100%;
+  }
+  .cont-fluid1 {
+    width: 150px;
+    height: 300px;
+    max-height: 100%;
+  }
+  .sing {
+    display: block;
+    justify-content: center;
+    align-items: center;
+    max-width: 100%;
+    max-height: 100%;
+  }
+  .card {
+    width: 22rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+  }
+  .heading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 5rem;
+  }
+  .heading h1 {
+    font-size: 20px;
+    text-align: center;
+  }
+
+  .desc1 {
+    margin-bottom: 3rem;
+  }
+
+  .smaller img {
+    width: 22rem;
+    height: 18rem;
+    border-radius: 5px;
+    border: 2px solid black;
+  }
+}
+@media screen and (max-width: 650px) {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  .jack {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+  }
+  .hole {
+    display: inline-block;
+    justify-content: center;
+    align-content: center;
+  }
+  .view-image img {
+    width: 14rem;
+    height: 18rem;
+    border-radius: 5px;
+    border: 2px solid black;
+  }
+  .cont-fluid {
+    width: 150px;
+    height: 300px;
+    max-height: 100%;
+  }
+  .cont-fluid1 {
+    width: 150px;
+    height: 300px;
+    max-height: 100%;
+  }
+  .sing {
+    display: block;
+    justify-content: center;
+    align-items: center;
+    max-width: 100%;
+    max-height: 100%;
+  }
+  .card {
+    width: 14rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+  }
+  .heading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 5rem;
+  }
+  .heading h1 {
+    font-size: 20px;
+    text-align: center;
+  }
+
+  .desc1 {
+    margin-bottom: 3rem;
+  }
+}
 </style>
