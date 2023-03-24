@@ -1,6 +1,8 @@
 import { createStore } from "vuex";
 import axios from "axios";
+import { useCookies } from "vue3-cookies";
 const arraylists = document.querySelector(".array-lists");
+const{cookies} = useCookies();
 const lagomURL = "https://lagom-project.onrender.com/";
 // import router from '../router/index'
 export default createStore({
@@ -154,28 +156,42 @@ export default createStore({
     //       console.log(err);
     //     });
     // },
-    async login(context, payload) {
-      console.log(payload);
-      fetch(`https://lagom-project.onrender.com/login`, {
-        method: "POST",
-        mode: "cors",
-        headers: {
-          "Content-type": "application/json; charset=UTF-8",
-        },
-        body: JSON.stringify(payload),
-      })
-        .then((res) => res.json())
-        .then((data) => {
-          console.log(data);
-          // console.log(err);
-        });
-      if (msg) {
-        context.commit("setMessage", msg);
+    async login (context, payload){
+      console.log(payload)
+      fetch(`https://lagom-project.onrender.com/login`, payload);
+      console.log(res, "Response: ");
+      const { jwToken, result, msg, err } = await res.data;
+      if (result) {
+        context.commit('setUser', result);
+        context.commit('setMessage', msg);
+        // context.commit('setSpinner', false);
+        cookies.set("LegitUser", jwToken);
         router.push("/");
       } else {
         context.commit("setMessage", err);
       }
     },
+    // async login(context, payload) {
+    //   console.log(payload);
+    //   fetch(`https://lagom-project.onrender.com/login`, {
+    //     method: "POST",
+    //     mode: "cors",
+    //     headers: {
+    //       "Content-type": "application/json; charset=UTF-8",
+    //     },
+    //     body: JSON.stringify(payload),
+    //   })
+    //     .then((res) => res.json())
+    //     .then((data) => {
+    //       console.log(data);
+    //     });
+    //   if (msg) {
+    //     context.commit("setMessage", msg);
+    //     router.push("/");
+    //   } else {
+    //     context.commit("setMessage", err);
+    //   }
+    // },
     
   },
   

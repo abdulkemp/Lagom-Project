@@ -3,13 +3,18 @@
     <div class="top fixed-top">
       <div class="contain">
         <div class="navb align-items-center justify-content-between">
-          <div>
+          <div class="log">
             <button class="lag">
               <router-link to="/">
                 <img src="https://i.postimg.cc/26C74zH7/lagom-high-resolution-logo-black-on-transparent-background.png"
                   class="lagom" alt="" srcset="" />
               </router-link>
             </button>
+            <div class="prof">
+              <router-link to="/portfolio" >
+                <ion-icon name="person-circle-outline" class="person"></ion-icon>
+              </router-link>
+            </div>
           </div>
           <input type="checkbox" id="nav-check" />
           <label for="nav-check" class="nav-toggler">
@@ -87,6 +92,29 @@ ul {
   margin-bottom: 1rem;
   margin-right: 1rem;
   /* margin-top: 1rem; */
+}
+
+.log{
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+.prof{
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  padding-left: 8px;
+  
+}
+
+.person{
+  width: 25px;
+  height: 25px;
+  color: rgb(62, 61, 61);
+}
+
+.person:hover{
+  color: white;
 }
 
 
