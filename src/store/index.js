@@ -10,6 +10,7 @@ export default createStore({
     user: null,
     product: null,
     showSpinner: null,
+    
     message: null,
   },
   getters: {
