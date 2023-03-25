@@ -140,6 +140,7 @@ export default {
   border-radius: 29% 71% 23% 77% / 77% 19% 81% 23%;
   border: 2px solid black;
 }
+
 .rig {
   float: right;
 }

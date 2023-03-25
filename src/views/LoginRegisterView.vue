@@ -1,10 +1,11 @@
 <template>
   <div class="body">
+    <NavBar />
     <div class="everything">
       <div class="login">
         <div class="front">
           <img
-            src="https://i.postimg.cc/L63rxvBX/designer-wooden-door-500x500.jpg"
+            src="https://i.postimg.cc/rsR9MK8y/DDL1i-left.jpg"
             alt=""
           />
         </div>
@@ -40,7 +41,7 @@
       <div class="register">
         <div class="front1">
           <img
-            src="https://i.postimg.cc/wTpC5nNZ/designer-right-wooden-door-500x500.jpg"
+            src="https://i.postimg.cc/Qtyq2pZn/DDL1i-right.jpg"
             alt=""
           />
         </div>
@@ -98,8 +99,12 @@
 </template>
 
 <script>
+import NavBar from '@/components/NavBar.vue';
 export default {
   name: "LoginRegister",
+  components:{
+    NavBar
+  },
   data() {
     return {
       firstName: "",
@@ -142,10 +147,11 @@ export default {
 
 .body {
   overflow: hidden;
+  background-image: linear-gradient(black,white,black);
 }
 .login {
   /* margin-right: 5rem; */
-  width: 100%;
+  width: 50%;
   height: 100%;
   display: flex;
   justify-content: center;
@@ -238,7 +244,8 @@ export default {
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-}
+  }
+
 
 .login {
   position: relative;

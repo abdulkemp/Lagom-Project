@@ -11,7 +11,7 @@
               </router-link>
             </button>
             <div class="prof">
-              <router-link to="/portfolio" >
+              <router-link to="/portfolio" id="icon">
                 <ion-icon name="person-circle-outline" class="person"></ion-icon>
               </router-link>
             </div>
