@@ -481,12 +481,12 @@ export default {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-left: 2rem;
+    margin-left: 3rem;
     margin-bottom: 4rem;
   }
   .c2 {
     display: inline-block;
-    margin-left: 11rem;
+    margin-left: 12rem;
     margin-top: 4rem;
     margin-bottom: 4rem;
     width: 16rem;
