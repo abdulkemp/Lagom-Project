@@ -166,7 +166,7 @@ export default createStore({
         context.commit('setMessage', msg);
         // context.commit('setSpinner', false);
         cookies.set("LegitUser", jwToken);
-        router.push("/");
+        // router.push("/");
       } else {
         context.commit("setMessage", err);
       }

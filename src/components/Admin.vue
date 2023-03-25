@@ -266,7 +266,7 @@ tbody button {
     display: none;
   }
   tbody td {
-    flex-wrap: wrap;
+    /* flex-wrap: wrap; */
     display: flex;
     justify-content: center;
     align-items: center;

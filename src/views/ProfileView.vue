@@ -40,6 +40,31 @@
         </div>
       </div>
     </div>
+    <div id="entry">
+      <div class="infoText">
+        <div class="informations">
+          <div class="tet">
+            <ul>
+              <li>
+                Full-Name:
+                <span class="other">Abdul-Azeez Kemp</span>
+              </li>
+              <li>
+                Email:
+                <span class="other">aakemp786@gmail.com</span>
+              </li>
+              <li>
+                Cell-No:
+                <span class="other">0827869214</span>
+              </li>
+              <ol class="passw">
+                <button type="submit" class="password">Change Password</button>
+              </ol>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -146,6 +171,9 @@ export default {
 .password:hover {
   color: rgb(3, 3, 138);
 }
+#entry {
+  display: none;
+}
 /* @media screen and (max-width: 768px) {
   * {
     margin: 0;
@@ -220,7 +248,7 @@ export default {
     box-sizing: border-box;
   }
   .dis {
-    display: inline-block;
+    display: flex;
     justify-content: center;
     align-content: center;
     height: 20rem;
@@ -234,10 +262,11 @@ export default {
     width: 100%;
   }
   .profile-img img {
-    width: 14rem;
-    height: 18rem;
-    border-radius: 5px;
-    border: 2px solid black;
+    width: 13rem;
+    height: 15rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
   .left-side {
     width: 150px;
@@ -245,33 +274,57 @@ export default {
     max-height: 100%;
   }
   .right-side {
-    width: 50px;
+    width: 0;
     height: 30px;
     max-height: 100%;
     display: none;
   }
+
   .disp {
-    display: flex;
+    display: inline-block;
     justify-content: center;
     align-items: center;
     max-width: 100%;
     max-height: 100%;
+    margin-left: 45px;
   }
-  .card {
-    width: 14rem;
-    margin-top: 2rem;
-    margin-bottom: 2rem;
-  }
-  .heading {
+
+  #entry {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding-top: 5rem;
-  }
-  .heading h1 {
-    font-size: 20px;
-    text-align: center;
+    visibility: visible;
+    margin-top: 3rem;
+    width: 50%;
+    max-width: 100%;
   }
 
+  .informations {
+    width: 20rem;
+  }
+
+  .passw {
+    float: right;
+  }
+  .infoText {
+  border-radius: 15px;
+  max-height: 100%;
+  width: 15rem;
+  height: 12rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 4rem;
+}
+
+.tet li{
+  margin-bottom: 1rem;
+  width: 15rem;
+  border-bottom: 2px solid black;
+}
+
+.other{
+  float: right;
+}
 }
 </style>
