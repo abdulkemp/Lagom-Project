@@ -53,6 +53,6 @@ route.put('/product/:id', bodyParser.json(), (req, res) => {
 
 route.delete('/product/:id', (req, res) => {
     product.deleteProduct(req, res);
-});
+});f
 
 module.exports = route;
