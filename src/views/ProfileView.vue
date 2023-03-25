@@ -5,7 +5,10 @@
       <div class="display">
         <div class="left-side">
           <div class="profile-img">
-            <img src="https://i.postimg.cc/P5R6CrKR/IMG-20230311-175710-1.jpg" alt="">
+            <img
+              src="https://i.postimg.cc/P5R6CrKR/IMG-20230311-175710-1.jpg"
+              alt=""
+            />
           </div>
         </div>
         <div class="right-side">
@@ -27,7 +30,7 @@
                   </li>
                   <ol class="pass">
                     <button type="submit" class="password">
-                        Change Password
+                      Change Password
                     </button>
                   </ol>
                 </ul>
@@ -75,7 +78,7 @@ export default {
   height: 35rem;
   float: left;
 }
-.profile-img  img{
+.profile-img img {
   border-radius: 15px;
   border: 3px solid black;
   max-height: 100%;
@@ -129,18 +132,146 @@ export default {
   align-items: center;
 }
 
-.pass{
-    float: right;
+.pass {
+  float: right;
 }
 
-.password{
-    background-color: transparent;
-    border: transparent;
-    text-decoration: underline;
-    color: blue;
+.password {
+  background-color: transparent;
+  border: transparent;
+  text-decoration: underline;
+  color: blue;
 }
 
-.password:hover{
-    color: rgb(3, 3, 138);
+.password:hover {
+  color: rgb(3, 3, 138);
+}
+/* @media screen and (max-width: 768px) {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  .dis {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+  }
+  .display {
+    display: inline-block;
+    justify-content: center;
+    align-content: center;
+  }
+  .profile-img img {
+    width: 14rem;
+    height: 18rem;
+    border-radius: 5px;
+    border: 2px solid black;
+  }
+  .left-side {
+    width: 150px;
+    height: 300px;
+    max-height: 100%;
+  }
+  .right-side {
+    width: 150px;
+    height: 300px;
+    max-height: 100%;
+  }
+  .disp {
+    display: block;
+    justify-content: center;
+    align-items: center;
+    max-width: 100%;
+    max-height: 100%;
+  }
+  .card {
+    width: 22rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+  }
+  .heading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 5rem;
+  }
+  .heading h1 {
+    font-size: 20px;
+    text-align: center;
+  }
+
+  .desc1 {
+    margin-bottom: 3rem;
+  }
+
+  .smaller img {
+    width: 22rem;
+    height: 18rem;
+    border-radius: 5px;
+    border: 2px solid black;
+  }
+} */
+@media screen and (max-width: 650px) {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  .dis {
+    display: inline-block;
+    justify-content: center;
+    align-content: center;
+    height: 20rem;
+    width: 15rem;
+  }
+  .display {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    max-width: 100%;
+    width: 100%;
+  }
+  .profile-img img {
+    width: 14rem;
+    height: 18rem;
+    border-radius: 5px;
+    border: 2px solid black;
+  }
+  .left-side {
+    width: 150px;
+    height: 300px;
+    max-height: 100%;
+  }
+  .right-side {
+    width: 50px;
+    height: 30px;
+    max-height: 100%;
+    display: none;
+  }
+  .disp {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 100%;
+    max-height: 100%;
+  }
+  .card {
+    width: 14rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+  }
+  .heading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 5rem;
+  }
+  .heading h1 {
+    font-size: 20px;
+    text-align: center;
+  }
+
 }
 </style>
