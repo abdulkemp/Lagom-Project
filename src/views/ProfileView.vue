@@ -286,7 +286,7 @@ export default {
     align-items: center;
     max-width: 100%;
     max-height: 100%;
-    margin-left: 45px;
+    margin-left: 50px;
   }
 
   #entry {
